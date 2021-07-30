@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+.attribution {
+    text-align: center;  
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+.attribution a {
+     color: hsl(228, 45%, 44%); 
+}
+body{
+    background: linear-gradient(to bottom, rgb(175, 103, 233), rgb(101, 101, 231));
+    background-attachment: fixed;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+pre{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+}
+hr{
+    margin: 15px 0 15px 0;
+}
+#wholepage{
+    overflow: hidden;
+    position: inherit;
+    border-radius: 50px;
+    box-shadow: 6px 6px 20px 0 rgb(80, 46, 107);
+    background-color: white;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-15%);
+    width: 800px;
+    height: 450px; 
+    display: flex;
+    
+}
+#img-box{
+    position: absolute;
+    left: 14%;
+    bottom: 31%;
+    z-index: 2;
+}
+#img-woman{
+    position: relative;
+    right: 15%;
+    max-width: 400px;
+    top: 20%;
+}
+#img-desktop{
+    position: absolute;
+    bottom: -35%;
+    right: 58%;
+    max-width: 900px;
+    height: auto;
+}
+#q1, #q2, #q3, #q4, #q5{
+    display: inline;
+}
+#q1form, #q2form, #q3form, #q4form, #q5form{
+    cursor: pointer;
+}
+#q1-ans, #q2-ans, #q3-ans, #q4-ans, #q5-ans{
+    padding: 10px 0 10px 0;
+    display: none;
+    font-size: 12px;
+    
+}
+#faq{
+    color: hsl(238, 29%, 16%);
+    padding: 50px;
+}
+@media screen and (max-width: 500px) {
+    #wholepage{
+        display: flex;
+        flex-direction: column;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
