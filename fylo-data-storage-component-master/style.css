@@ -1,0 +1,163 @@
+/* Layout */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+body{
+    overflow: hidden;
+    background-color: hsl(229, 57%, 11%);
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    color: hsl(243, 100%, 93%);
+}
+#wholepage{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    padding-left: 50%; 
+    margin-left: 20%;
+    transform: translate(-50%,-50%);
+}
+#images{
+    border-radius: 10px 100px 10px 10px;
+    padding: 30px 10% 30px 30px;
+    background-color: hsl(228, 56%, 26%);
+    display: flex;
+    flex-direction: column;
+}
+.images-2{
+    display: flex;
+    flex-direction: row;
+}
+/* Layout */
+/* images */
+.images-2-child{
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: hsl(229, 57%, 11%);
+}
+.logo{
+    padding-bottom: 10px;
+    width: 150px;
+    height: auto;
+}
+/* images */
+/* progressbar edit */
+#progressbar{
+    margin-top: 50px;
+    margin-left: 20px;
+    background-color: hsl(228, 56%, 26%);
+    border-radius: 10px;
+    padding: 10px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+}
+.p1{
+    padding-top: 20px;
+}
+/* #input:hover .phide{
+    display: block;
+} */
+.phide{
+    display: block;
+    color: black;
+    z-index: 0;
+    padding: 20px;
+    background: white;
+    position: absolute;
+    top: 0%;
+    right: 4.5%;
+    border-radius: 20px 20px 0 20px;
+}
+#triangle{
+    position: absolute;
+    top: 0%;
+    right: 4.5%;
+    transform: translateY(360%);
+    border-left: 20px solid transparent;
+    border-top: 20px solid white;
+}
+.p2p3{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+#input{
+    border-radius: 50px;
+    background: hsl(229, 57%, 11%);
+    width: 400px;
+    height: auto;
+    margin: 20px 10px 10px 0px;
+}
+#input>:first-child{
+    background: linear-gradient(to right,hsl(6, 100%, 80%) ,hsl(335, 100%, 65%));
+    padding: 0;
+    width: 300px;
+    border-radius: 50px;
+}
+.fas{
+    padding-left: 282px;
+}
+/* progressbar edit */
+/* background */
+.background{
+    position: fixed;
+    max-width: 130%;
+    height: auto;
+    left: 0;
+    top: 50%;
+    display: block;
+}
+@media only screen and (max-width: 817px){
+    #wholepage{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+    #images{
+        padding-left: 3%;
+    }
+    img{
+        padding: 1em;
+        margin: 0.5%;
+        width: 2em;
+        height: 2em;
+    }
+    .background{
+        display: none;
+    }
+    #progressbar{
+        padding-left: 10%;
+        margin-left: 0;
+        padding-bottom: 40px;
+    }
+    .phide{
+        padding: 1.5%;
+        width: 7rem;
+        border-radius: 10px;
+        position: absolute;
+        top: 76%;
+        right: 20%;
+        transform: translateY(100%);
+
+    }
+    #input>:first-child{
+        width: 80%;
+
+    }
+    .fas{
+        padding-left:93% ;
+    }
+    #input{
+        width: 100%;
+    }
+    body{
+        background: url(./images/bg-mobile.png);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #triangle{
+        display: none;
+    }
+}
