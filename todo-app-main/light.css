@@ -1,0 +1,21 @@
+body{
+    background-image: url("./images/bg-desktop-light.jpg");
+    background-color: hsl(0, 0%, 98%);
+}
+#bodyupper, #middlelower{
+    background: var(--backgroundlightform)
+}
+.text{
+    color:hsl(235, 19%, 35%);
+}
+.textdecor{
+    color:hsl(236, 9%, 61%);
+}
+.bodylower-item:hover{
+    cursor: pointer;
+    color: hsl(235, 19%, 35%);
+}
+.input{
+    color: hsl(235, 19%, 35%);
+}
+.attribution {color:hsl(235, 19%, 35%) ;}

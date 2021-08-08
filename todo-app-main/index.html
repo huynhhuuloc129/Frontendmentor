@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
-
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Todo app</title>
@@ -19,24 +20,28 @@
 
     <div id="header">
       <h1>TODO</h1>
-      <img class="header-img" src="./images/icon-sun.svg" alt="light-mode">
+    <img class="header-img sun" src="./images/icon-sun.svg" alt="light-mode">
     </div>
     
     <div id="bodyupper">
-      <div>&emsp;</div>
+      <div class="circle">&emsp;</div>
       <input class="input" type="text" placeholder="Create a new todo..." >
     </div>
-    
-    <div id="bodylower">
-      <div >0 items lefts</div>
-      <div class="bodylower2">
-        <div class="bodylower-item">All</div>
-        <div class="bodylower-item">Active</div>
-        <div class="bodylower-item">Completed</div>
+    <div id="middlelower">
+      <div id="listtodo"> <!--thêm todo vào list-->
+  
       </div>
-      <div class="bodylower-item">Clear Completed</div>
-    </div>
 
+      <div id="bodylower">
+        <div class="count">0 items lefts</div>
+        <div class="bodylower2">
+          <div class="bodylower-item">All</div>
+          <div class="bodylower-item">Active</div>
+          <div class="bodylower-item">Completed</div>
+        </div>
+        <div class="bodylower-item">Clear Completed</div>
+      </div>
+    </div>
     <div id="bottom">Drag and drop to reorder list</div>
 
   </div>

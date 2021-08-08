@@ -2,19 +2,22 @@
 :root{
     --formwidth: 500px;
     --backgroundform: hsl(235, 24%, 19%);
+    --paddingMUform: 20px;
+    --backgroundlightform: hsl(236, 33%, 92%);
 }
 body{
     background-image: url(./images/bg-desktop-dark.jpg);
     background-repeat: no-repeat;
     font-size: 18px;
     font-family: 'Josefin Sans', sans-serif;
+    background-color: hsl(235, 21%, 11%);
+    color: white;
 }
-.attribution { font-size: 11px; text-align: center; }
 
 /*//////////////////////////// whole page edit //////////////////////////// */
 #wholepage{
     max-width: 1500px;
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,29 +41,92 @@ h1{
     height: 25px;
 }
 /*  */
-/*//////////////////////////// body edit//////////////////////////////////////// */
+/*//////////////////////////// upper edit//////////////////////////////////////// */
 #bodyupper{
-    width: var(--formwidth);
-    margin-bottom: 30px;
+    padding: var(--paddingMUform);  
+    background: var(--backgroundform);
+    width: calc(var(--formwidth) - 20px);
+    padding-right: 0;
     display: flex;
+    margin-bottom: 30px;
+    border-radius: 3px;
 }
-#bodyupper:first-child{
+.circle{
+    margin-right: 1rem;
     cursor: pointer;
-    border: 2px solid white;
+    border: 1px solid hsl(234, 11%, 52%);
     border-radius: 50%;
 }
 .input{
+    font-size: 18px;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
     background: transparent;
     border: none;
     outline: none;
-    width:300px;
+    width:400px;
 }
+/*//////////////////////////// middle edit//////////////////////////////////////// */
+#middlelower{
+    border-radius: 3px;
+    box-shadow: 1px 2px 18px black;
+    background: var(--backgroundform);
+    margin-bottom: 40px;
+    width: var(--formwidth);
+}
+#listtodo{
+    display: none;
+    padding: var(--paddingMUform);
+    padding-bottom: 0;
+}
+.listtodochild{
+    padding-bottom: calc(var(--paddingMUform) - 15px);
+    padding-top: calc(var(--paddingMUform) - 15px);
 
-
+    display: flex;
+    color: hsl(234, 11%, 52%);
+    justify-content: space-between;
+}
+.lchild{
+    display: flex;
+}
+.check{
+    cursor:pointer;
+    outline: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.text{
+    color: hsl(234, 39%, 85%);
+}
+.textdecor{
+    text-decoration: line-through;
+    color: hsl(234, 11%, 52%);
+}
+.grandchild{
+    word-break: break-all;
+    word-wrap:break-word;
+    cursor: pointer;
+}
+.circle, img.grandchild{
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+img.grandchild{
+    display: none;
+}
+.circleactive{
+    background: linear-gradient(hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+}
+/*//////////////////////////// bottom edit//////////////////////////////////////// */
 #bodylower{
-    margin-bottom: 60px;
+    padding-top: var(--paddingMUform);
+    margin-bottom: 20px;
     width: var(--formwidth);
     display: flex;
     justify-content: space-around;
@@ -76,26 +142,19 @@ h1{
 .bodylower2>div{
     padding: 0 5px;
 }
-
-/*//////////////////////////// bottom edit//////////////////////////////////////// */
-#bottom{
-    margin-bottom: 20px;
-}
-/*//////////////////////////// color //////////////////////////////////////////*/
-body{
-    background-color: hsl(235, 21%, 11%);
-    color: white;
-}
 #bodylower, #bottom, ::placeholder{
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     color: hsl(234, 11%, 52%);
 }
-#bodyupper, #bodylower{
-    padding: 20px;
-    border-radius: 3px;
+hr{
+    position: relative;
+    left: -20px;
+    width: calc(var(--formwidth) - 2px);
+    border:0.1px solid hsl(234, 11%, 52%);
     background: var(--backgroundform);
-    box-shadow: 5px 5px 5px black;
+    color: hsl(234, 11%, 52%);
 }
+
 .attribution a { color: hsl(228, 45%, 44%); }
-/*  */
+.attribution { margin-top: 50px; font-size: 18px; text-align: center; }
