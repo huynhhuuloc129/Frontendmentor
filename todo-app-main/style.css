@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+:root{
+    --formwidth: 500px;
+    --backgroundform: hsl(235, 24%, 19%);
+}
+body{
+    background-image: url(./images/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    font-size: 18px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.attribution { font-size: 11px; text-align: center; }
+
+/*//////////////////////////// whole page edit //////////////////////////// */
+#wholepage{
+    max-width: 1500px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*  */
+/*//////////////////////////// header edit /////////////////////////////////*/
+#header{
+    width: var(--formwidth);
+    margin: 20px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+h1{
+    letter-spacing: 1rem;
+}
+.header-img{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+/*  */
+/*//////////////////////////// body edit//////////////////////////////////////// */
+#bodyupper{
+    width: var(--formwidth);
+    margin-bottom: 30px;
+    display: flex;
+}
+#bodyupper:first-child{
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+.input{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    background: transparent;
+    border: none;
+    outline: none;
+    width:300px;
+}
+
+
+#bodylower{
+    margin-bottom: 60px;
+    width: var(--formwidth);
+    display: flex;
+    justify-content: space-around;
+}   
+.bodylower-item:hover{
+    cursor: pointer;
+    color: hsl(236, 33%, 92%);
+}
+.bodylower2{
+    display: flex;
+    justify-content: space-around;
+}
+.bodylower2>div{
+    padding: 0 5px;
+}
+
+/*//////////////////////////// bottom edit//////////////////////////////////////// */
+#bottom{
+    margin-bottom: 20px;
+}
+/*//////////////////////////// color //////////////////////////////////////////*/
+body{
+    background-color: hsl(235, 21%, 11%);
+    color: white;
+}
+#bodylower, #bottom, ::placeholder{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    color: hsl(234, 11%, 52%);
+}
+#bodyupper, #bodylower{
+    padding: 20px;
+    border-radius: 3px;
+    background: var(--backgroundform);
+    box-shadow: 5px 5px 5px black;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+/*  */
