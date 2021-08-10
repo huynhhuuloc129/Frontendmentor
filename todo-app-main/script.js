@@ -47,6 +47,7 @@ function lowerpart() {
             hoverX(); //hover hiện dấu X;
             document.querySelector(".grandchild" + count).onclick = deleteElement; //xóa x khi click
             showAll();
+            draganddrog();
             input.value = "";
         }
         e.preventDefault;
@@ -54,14 +55,14 @@ function lowerpart() {
 }
 function addElement(value) {  // thêm dãy vừa nhập vào bảng hiển thị listtodo
     $('#listtodo').show();
-    $('#listtodo').prepend('<div class="listtodochild listtodochild' + count + '">' +
+    $('#listtodo').prepend('<div draggable="true" class="listtodochild listtodochild' + count + '">' +
         '<div class="lchild">' +
         '<div class="circle circle' + count + ' grandchild">&emsp;</div>' +
         '<div class="text text' + count + ' grandchild">' + value + '</div>' +
         '</div>' +
         '<img class="grandchild grandchild' + count + '" src="./images/icon-cross.svg" alt="cross">' +
-        '</div>' +
-        '<hr class="listtodochild' + count + '">');
+        '</div>' );
+        // '<hr class="listtodochild' + count + '">');
     $('.count').text(count + ' items lefts');
 }
 
@@ -114,20 +115,20 @@ function xulicacnut(slidepage) {
 function showAll(e) {
     $(".listtodochild").show();
     $("hr").show();
-    if (e!=undefined)e.preventDefault();
+    if (e != undefined) e.preventDefault();
 }
 
 function activeOnly(e) {
     let circlelist = document.querySelectorAll(".circle");
 
     Array.from(circlelist).forEach((circlechild, number) => {
-        if (number>0){
+        if (number > 0) {
             let classname = circlechild.className;
             let index = classname.match(/(\d+)/)[0];
-            if (classname.indexOf("active")>=0){
-                $('.listtodochild'+index).hide();
-            } else{
-                $('.listtodochild'+index).show();
+            if (classname.indexOf("active") >= 0) {
+                $('.listtodochild' + index).hide();
+            } else {
+                $('.listtodochild' + index).show();
             }
         }
     });
@@ -138,13 +139,13 @@ function completedOnly(e) {
     let circlelist = document.querySelectorAll(".circle");
 
     Array.from(circlelist).forEach((circlechild, number) => {
-        if (number>0){
+        if (number > 0) {
             let classname = circlechild.className;
             let index = classname.match(/(\d+)/)[0];
-            if (classname.indexOf("active")<0){
-                $('.listtodochild'+index).hide();
+            if (classname.indexOf("active") < 0) {
+                $('.listtodochild' + index).hide();
             } else {
-                $('.listtodochild'+index).show();
+                $('.listtodochild' + index).show();
             }
         }
     });
@@ -154,17 +155,59 @@ function clearCompleted(e) {
     let circlelist = document.querySelectorAll(".circle");
 
     Array.from(circlelist).forEach((circlechild, number) => {
-        if (number>0){
+        if (number > 0) {
             let classname = circlechild.className;
             let index = classname.match(/(\d+)/)[0];
-            if (classname.indexOf("active")>=0){
-                $('.listtodochild'+index).remove();
+            if (classname.indexOf("active") >= 0) {
+                $('.listtodochild' + index).remove();
                 count--;
                 $('.count').text(count + ' items lefts');
 
             }
-        } 
+        }
     });
     e.preventDefault();
-    
+
+}
+//                    drag and drop//////////////////////////////////////////////
+const container = document.querySelector("#listtodo");
+function dragstart_handler(ev) {
+    ev.target.classList.add('dragging');
+}
+function drop(ev) {
+    ev.preventDefault();
+    ev.target.classList.remove('dragging');
+}
+function allowDrop(ev) {
+    let dragging = document.querySelector('.dragging');
+    const afterElement = getDragAfterElement(container, ev.clientY);
+
+    if (afterElement == null){
+        container.appendChild(dragging);
+    } else{
+        container.insertBefore(dragging,afterElement);
+    }
+    ev.preventDefault();
+}
+
+function draganddrog() {
+    const element = document.querySelector(".listtodochild" + count);
+    element.addEventListener("dragstart", dragstart_handler);
+    element.addEventListener("dragend", drop);
+    element.addEventListener("dragover", allowDrop);
+}
+
+
+function getDragAfterElement(container, y) {
+    const draggbleElements = [...container.querySelectorAll(".listtodochild:not(.dragging)")];
+
+    return draggbleElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height;
+        if (offset < 0 && offset > closest.offset){
+            return {offset: offset, element: child}
+        } else{
+            return closest;
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
 }

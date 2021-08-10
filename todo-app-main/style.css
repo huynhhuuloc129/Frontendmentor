@@ -76,13 +76,14 @@ h1{
 }
 #listtodo{
     display: none;
-    padding: var(--paddingMUform);
+    /* padding: var(--paddingMUform); */
     padding-bottom: 0;
 }
 .listtodochild{
+    border-bottom: 1px solid hsl(234, 11%, 52%);
     padding-bottom: calc(var(--paddingMUform) - 15px);
     padding-top: calc(var(--paddingMUform) - 15px);
-
+    padding: 20px;
     display: flex;
     color: hsl(234, 11%, 52%);
     justify-content: space-between;
@@ -155,6 +156,8 @@ hr{
     background: var(--backgroundform);
     color: hsl(234, 11%, 52%);
 }
-
+.dragging{
+    opacity: .5;
+}
 .attribution a { color: hsl(228, 45%, 44%); }
 .attribution { margin-top: 50px; font-size: 18px; text-align: center; }
